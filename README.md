@@ -1,0 +1,18 @@
+# HomeLabHub
+## ! Many features here are not yet implemented !
+
+### What is HomeLabHub?
+HomeLabHub is my own link- and info-dashboard, currently written in python with flask, but I might want to change it at a later date. 
+I am mainly inspired by [Flame](https://github.com/pawelmalak/flame), and thus [SUI](https://github.com/jeroenpardon/sui), [Dashy](https://github.com/lissy93/dashy), and [CasaOS](https://casaos.io/).
+#### Inspired by these projects, HomeLabHub has a few nice features:
+- A clean, simple, and dynamic "glassmorphic" design
+- Easy adding, editing, and deleting of links (called "cards")
+- Your own backgroundand theme
+- Settings and cards per user
+- System and personal info (like weather, memory usage, current date and time)
+
+### Who is HomeLabHub
+Man, I don't know🤷
+
+### Why is HomeLabHub
+I am mainly doing this for a school project, but will prabably continue developing it after the project is due.
