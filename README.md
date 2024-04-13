@@ -1,5 +1,5 @@
 # HomeLabHub
-## ! Many features here are not yet implemented !
+## ! Many features here are not yet implemented ! see the [Kanban](https://github.com/users/HardoMX/projects/7/views/1) or look at the [issues](https://github.com/HardoMX/HomeLabHub/issues)
 
 ### What is HomeLabHub?
 HomeLabHub is my own link- and info-dashboard, currently written in python with flask, but I might want to change it at a later date. 
