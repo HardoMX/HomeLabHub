@@ -11,7 +11,7 @@ I am mainly inspired by [Dashy](https://github.com/lissy93/dashy) and [CasaOS](h
 - Settings and cards per user
 - System and personal info (like weather, memory usage, current date and time)
 
-#### Current design
+#### Current planned design example
 ![HomeLabHub design](https://github.com/HardoMX/HomeLabHub/blob/main/docs/HomeLabHub%20design.png)
 
 ### Who is HomeLabHub
