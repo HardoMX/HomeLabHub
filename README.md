@@ -12,7 +12,7 @@ I am mainly inspired by [Dashy](https://github.com/lissy93/dashy) and [CasaOS](h
 - System and personal info (like weather, memory usage, current date and time)
 
 #### Current design
-![HomeLabHub design](docs/HomeLabHub design.png)
+![HomeLabHub design](https://github.com/HardoMX/HomeLabHub/blob/main/docs/HomeLabHub%20design.png)
 
 ### Who is HomeLabHub
 Man, I don't know🤷
