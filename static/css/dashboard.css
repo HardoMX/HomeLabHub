@@ -1,0 +1,16 @@
+:root {
+    --menu: #696969;
+    --card: #999999;
+    --text: #FFFFFF;
+    --stats: #00E0FF;
+    --sats-bg: #AAAAAA;
+}
+
+/* TODO: change px to relative units when rest of design is more complete */
+.card {
+    background-color: var(--card);
+    opacity: 0.15;
+    filter: drop-shadow(1px 1px 2px rgba(0, 0, 0, 0.25));
+    box-shadow: 1px 1px 2px rgba(255, 255, 255, 0.25);
+    backdrop-filter: blur(15px);
+}
