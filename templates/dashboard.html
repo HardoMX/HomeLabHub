@@ -10,12 +10,12 @@
     </head>
     <body>
         <div class="sidebar">
-            <div class="time card">
-                <b>14:14</b>
-                Monday, April 15
+            <div class="datetime card">
+                <span class="time">{{ time }}</span>
+                {{ date }}
             </div>
             <div class="weather card">
-                <b>Good morning</b>
+                <b>Good {{ time_of_day }}</b>
                 9°C
                 Raining
             </div>
@@ -28,6 +28,22 @@
             <div class="mady-by card">
                 HomeLabHub, made with &hearts; by HardoMX
             </div>
+        </div>
+        <div class="content">
+            <header>
+                <nav>
+                    <ul>
+                        <li class="card">Server</li>
+                        <li class="card">Network</li>
+                        <li class="card">Sites</li>
+                        <li class="card">School</li>
+                        <li class="card">set+git</li>
+                    </ul>
+                </nav>
+            </header>
+            <main>
+
+            </main>
         </div>
     </body>
 </html>

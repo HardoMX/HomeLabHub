@@ -19,3 +19,6 @@ Man, I don't know🤷
 
 ### Why is HomeLabHub
 I am mainly doing this for a school project, but will prabably continue developing it after the project is due.
+
+### Dependencies
+- PyOWM: `pip install pyowm`
