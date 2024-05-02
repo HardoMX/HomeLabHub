@@ -15,9 +15,12 @@
                 {{ date }}
             </div>
             <div class="weather card">
-                <b>Good {{ time_of_day }}</b>
-                9°C
-                Raining
+                <span class="time-of-day">Good {{ time_of_day }}</span>
+                <div class="weather-status">
+                    <div>svg</div>
+                    {{ temp }}°C
+                    {{ weather }}
+                </div>
             </div>
             <div class="stats card">
                 f

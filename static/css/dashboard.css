@@ -1,6 +1,6 @@
 :root {
     --menu: #696969;
-    --card: #99999910;
+    --card: #99999935;
     --text: #FFFFFF;
     --stats: #00E0FF;
     --sats-bg: #AAAAAA;
@@ -52,6 +52,18 @@ body {
     flex-direction: column;
 
     .time {
+        font-size: 4rem;
+    }
+}
+
+.weather {
+    .time-of-day {
         font-size: 2rem;
+    }
+
+    .weather-status {
+        display: flex;
+
+
     }
 }
