@@ -16,10 +16,12 @@
             </div>
             <div class="weather card">
                 <span class="time-of-day">Good {{ time_of_day }}</span>
-                <div class="weather-status">
-                    <div>svg</div>
-                    {{ temp }}°C
-                    {{ weather }}
+                <div class="weather-info">
+                    svg
+                    <div class="weather-status">
+                        <span>{{ temp }}°C</span>
+                        {{ weather }}
+                    </div>
                 </div>
             </div>
             <div class="stats card">

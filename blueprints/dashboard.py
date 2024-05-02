@@ -3,10 +3,11 @@ from datetime import datetime
 from pyowm import OWM
 from pyowm.utils import config
 from pyowm.utils import timestamps
+from blueprints.data.api import OWM_API_KEY
 
 dash_bp = Blueprint('dash', __name__)
 
-owm = OWM('3c0c32b6f7e63b1002244e6dc8a0c736')
+owm = OWM(OWM_API_KEY)
 mgr = owm.weather_manager()
 
 @dash_bp.route("/", methods=["GET"])

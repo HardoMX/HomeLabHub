@@ -61,9 +61,12 @@ body {
         font-size: 2rem;
     }
 
-    .weather-status {
+    .weather-info {
         display: flex;
 
-
+        .weather-status {
+            display: flex;
+            flex-direction: column;
+        }
     }
 }
