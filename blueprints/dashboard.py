@@ -1,9 +1,16 @@
 from flask import Blueprint, render_template
+
+from flask_socketio import emit
+import subprocess
+
 from datetime import datetime
+
 from pyowm import OWM
 from pyowm.utils import config
 from pyowm.utils import timestamps
+
 from blueprints.data.api import OWM_API_KEY
+from blueprints.data.sites import sites
 
 dash_bp = Blueprint('dash', __name__)
 
@@ -13,6 +20,7 @@ mgr = owm.weather_manager()
 @dash_bp.route("/", methods=["GET"])
 def dash():
     # TODO: figure out how to dynamically update time without page refresh
+    # TODO: can be done with websockets
     time = datetime.now().strftime("%H:%M")
     date = datetime.now().strftime("%B %d, %Y")
 
@@ -24,8 +32,12 @@ def dash():
         time_of_day = "evening"
     else:
         time_of_day = "night"
-        
-    weather = mgr.weather_at_place('Laxa,SE').weather.detailed_status
-    temp = mgr.weather_at_place('Laxa,SE').weather.temperature('celsius')
 
-    return render_template("dashboard.html", title="Dashboard", time=time, date=date, time_of_day=time_of_day, weather=weather, temp=temp['temp'])
+    weather = mgr.weather_at_place('Laxa,SE').weather.detailed_status
+    temp = mgr.weather_at_place('Laxa,SE').weather.temperature('celsius')['temp']
+
+    return render_template("dashboard.html", title="Dashboard", time=time, date=date, time_of_day=time_of_day, weather=weather, temp=temp, sites=sites)
+
+def update_time(socketio):
+    time = datetime.now().strftime("%H:%M")
+    emit("update_time", {"time": time})
