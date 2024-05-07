@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <title>{{ title }}</title>
+        <link href="{{ url_for('static', filename='css/dashboard.css') }}" rel="stylesheet">
+        <link rel="icon" type="image/png" href="#"> <!-- Add link when logo is made -->
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.0.1/socket.io.min.js"></script>
+    </head>
+    <body>
+        <div class="sidebar">
+            <div class="datetime card">
+                <div class="time">time</div>
+                <div class="date">date</div>
+            </div>
+            <div class="weather card">
+                <span class="time-of-day">Good {{ time_of_day }}</span>
+                <div class="weather-info">
+                    svg
+                    <div class="weather-status">
+                        <span>{{ temp }}°C</span>
+                        {{ weather }}
+                    </div>
+                </div>
+            </div>
+            <div class="stats card">
+                f
+            </div>
+            <div class="drive card">
+                f
+            </div>
+            <div class="mady-by card">
+                HomeLabHub, made with &hearts; by HardoMX
+            </div>
+        </div>
+        <div class="content">
+            <header>
+                <nav>
+                    <ul>
+                        <li class="card">Server</li>
+                        <li class="card">Network</li>
+                        <li class="card">Sites</li>
+                        <li class="card">School</li>
+                        <li class="card">set+git</li>
+                    </ul>
+                </nav>
+            </header>
+            <main>
+            {% block content %}
+                Something went wrong :(
+            {% endblock %}
+            </main>
+        </div>
+    </body>
+    <script src="{{ url_for('static', filename='js/time.js') }}"></script>
+</html>
