@@ -1,10 +1,14 @@
 {% extends "index.html" %}
 
 {% block content %}
-    {% for site in sites %}
-        <a class="site card link" href="{{ site.url }}" target="_blank">
-            <img src="{{ site.img }}" alt="{{ site.name }}">
-            {{ site.name }}
-        </a>
-{% endfor %}
+    {% for category in categories %}
+        {% for site in sites %}
+        {% if site.category == category %}
+            <a class="site card link" href="{{ site.url }}" target="_blank">
+                <img src="{{ site.img }}" alt="{{ site.name }}">
+                {{ site.name }}
+            </a>
+        {% endif %}
+        {% endfor %}
+    {% endfor %}
 {% endblock %}

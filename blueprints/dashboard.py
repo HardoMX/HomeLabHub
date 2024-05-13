@@ -1,14 +1,14 @@
 from flask import Blueprint, render_template
 
 from flask_socketio import emit
-import subprocess
 
 from pyowm import OWM
 from pyowm.utils import config
 from pyowm.utils import timestamps
 
 from blueprints.data.api import OWM_API_KEY
-from blueprints.data.sites import sites
+from blueprints.data.sites import SITES
+CATEGORIES = ["Server", "Network", "Security", "Sites"]
 
 dash_bp = Blueprint('dash', __name__)
 
@@ -21,4 +21,4 @@ def dash():
     temp = mgr.weather_at_place('Laxa,SE').weather.temperature('celsius')['temp']
     weather_symbol = mgr.weather_at_place('Laxa,SE').weather.weather_icon_name
 
-    return render_template("dashboard.html", title="Dashboard", weather=weather, temp=temp, weather_symbol=weather_symbol, sites=sites)
+    return render_template("dashboard.html", title="Dashboard", weather=weather, temp=temp, weather_symbol=weather_symbol, sites=SITES, categories=CATEGORIES)
