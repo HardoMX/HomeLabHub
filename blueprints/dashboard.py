@@ -19,5 +19,6 @@ mgr = owm.weather_manager()
 def dash():
     weather = mgr.weather_at_place('Laxa,SE').weather.detailed_status
     temp = mgr.weather_at_place('Laxa,SE').weather.temperature('celsius')['temp']
+    weather_symbol = mgr.weather_at_place('Laxa,SE').weather.weather_icon_name
 
-    return render_template("dashboard.html", title="Dashboard", weather=weather, temp=temp, sites=sites)
+    return render_template("dashboard.html", title="Dashboard", weather=weather, temp=temp, weather_symbol=weather_symbol, sites=sites)
