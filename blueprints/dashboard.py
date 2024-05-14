@@ -8,7 +8,7 @@ from pyowm.utils import timestamps
 
 from blueprints.data.api import OWM_API_KEY
 from blueprints.data.sites import SITES
-CATEGORIES = ["Server", "Network", "Security", "Sites"]
+from blueprints.data.settings import CATEGORIES
 
 dash_bp = Blueprint('dash', __name__)
 

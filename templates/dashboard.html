@@ -2,6 +2,11 @@
 
 {% block content %}
     {% for category in categories %}
+    <div class="category {{ category }}">
+        <header>
+            {{ category }}
+        </header>
+        <div class="links">
         {% for site in sites %}
         {% if site.category == category %}
             <a class="site card link" href="{{ site.url }}" target="_blank">
@@ -10,5 +15,7 @@
             </a>
         {% endif %}
         {% endfor %}
+        </div>
+    </div>
     {% endfor %}
 {% endblock %}
