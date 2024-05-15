@@ -13,3 +13,4 @@ lib64
 bin
 api.py
 include/
+include/site/python3.12/greenlet/greenlet.h
