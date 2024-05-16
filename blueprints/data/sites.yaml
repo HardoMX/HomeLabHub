@@ -12,3 +12,8 @@
   url: https://twitter.com/
   icon: twitter
   category: Sites
+
+- name: TikTok
+  url: https://tiktok.com/
+  icon: tiktok
+  category: Network

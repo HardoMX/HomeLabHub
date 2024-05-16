@@ -10,7 +10,7 @@
 
         <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.0.1/socket.io.min.js"></script>
     </head>
-    <body>
+    <body style="background-image: url('{{ background }}');">
         <div class="sidebar">
             <div class="datetime card">
                 <div class="time">time</div>
@@ -19,7 +19,7 @@
             <div class="weather card">
                 <span class="time-of-day">Good {{ time_of_day }}</span>
                 <div class="weather-info">
-                    svg
+                    <img class="weather-symbol" src="/static/images/weather-icons/{{ weather_symbol }}.svg">
                     <div class="weather-status">
                         <span>{{ temp }}°C</span>
                         {{ weather }}
