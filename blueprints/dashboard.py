@@ -1,11 +1,6 @@
 from flask import Blueprint, render_template
 
-from flask_socketio import emit
-
 from pyowm import OWM
-from pyowm.utils import config
-from pyowm.utils import timestamps
-
 from blueprints.data.api import OWM_API_KEY
 from blueprints.data.sites import SITES
 from blueprints.data.settings import CATEGORIES, BACKGROUND

@@ -1,0 +1,14 @@
+{% extends "index.html" %}
+
+{% block content %}
+    <form action="{{ url_for('cms.edit_settings') }}" method="PSOT" class="settings-form form">
+        <label for="settings">Edit settings file</label>
+        <textarea name="settings" id="settings">{{ settings }}</textarea>
+        <input type="submit">
+    </form>
+    <form action="{{ url_for('cms.edit_sites') }}" method="PSOT" class="sites-form form">
+        <label for="sites"> Edit sites file</label>
+        <textarea name="sites" id="sites">{{ sites }}</textarea>
+        <input type="submit">
+    </form>
+{% endblock %}
