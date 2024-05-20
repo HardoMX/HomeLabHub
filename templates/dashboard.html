@@ -12,9 +12,11 @@
             <a class="site card link" href="{{ site.url }}" target="_blank">
                 <img src="{{ site.img }}" alt="{{ site.name }}">
                 {{ site.name }}
+                {{ site.description }}
             </a>
         {% endif %}
         {% endfor %}
+        <form action="{{ url_for('cms.add_settings') }}"></form>
         </div>
     </div>
     {% endfor %}

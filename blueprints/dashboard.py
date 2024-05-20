@@ -2,8 +2,7 @@ from flask import Blueprint, render_template
 
 from pyowm import OWM
 from blueprints.data.api import OWM_API_KEY
-from blueprints.data.sites import SITES
-from blueprints.data.settings import CATEGORIES, BACKGROUND
+from blueprints.data.settings import CATEGORIES, BACKGROUND, SITES
 
 dash_bp = Blueprint('dash', __name__)
 

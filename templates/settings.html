@@ -1,14 +1,13 @@
 {% extends "index.html" %}
 
 {% block content %}
-    <form action="{{ url_for('cms.edit_settings') }}" method="PSOT" class="settings-form form">
+    <header>
+        <h1 class="card">Settings</h1>
+        <a class="return card" href="/">Return to dashboard</a>
+    </header>
+    <form action="{{ url_for('cms.edit') }}" method="PSOT" class="settings-form form card">
         <label for="settings">Edit settings file</label>
         <textarea name="settings" id="settings">{{ settings }}</textarea>
-        <input type="submit">
-    </form>
-    <form action="{{ url_for('cms.edit_sites') }}" method="PSOT" class="sites-form form">
-        <label for="sites"> Edit sites file</label>
-        <textarea name="sites" id="sites">{{ sites }}</textarea>
-        <input type="submit">
+        <input type="submit" value="Save">
     </form>
 {% endblock %}

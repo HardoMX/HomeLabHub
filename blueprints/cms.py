@@ -3,9 +3,7 @@ from flask import Blueprint ,render_template, redirect, request
 from pyowm import OWM
 from blueprints.data.api import OWM_API_KEY
 
-from blueprints.data.sites import SITES
 from blueprints.data.settings import BACKGROUND
-import blueprints.data.settings
 
 cms_bp = Blueprint("cms", __name__)
 
@@ -18,22 +16,18 @@ def settings():
     temp = mgr.weather_at_place('Laxa,SE').weather.temperature('celsius')['temp']
     weather_symbol = mgr.weather_at_place('Laxa,SE').weather.weather_icon_name
     
-    settings = open('blueprints/data/settings.yaml', 'r')
-    sites = open('blueprints/data/sites.yaml', 'r')
+    file = open('blueprints/data/settings.yaml', 'r')
+    settings = file.read()
+    file.close()
     
-    return render_template("settings.html", title="Settigns", background=BACKGROUND, weather=weather, temp=temp, weather_symbol=weather_symbol, settings=settings.read(), sites=sites.read())
+    return render_template("settings.html", title="Settings", background=BACKGROUND, weather=weather, temp=temp, weather_symbol=weather_symbol, settings=settings)
 
-@cms_bp.route("/cms/sites/create", methods=["POST"])
-def create_site():
+@cms_bp.route("/cms/add/site", methods=["POST"])
+def add_site():
     print(request.form)
     return redirect("/settings")
 
-@cms_bp.route("/cms/edit-settings", methods=["POST"])
-def edit_settings():
-    print(request.form)
-    return redirect("/settings")
-
-@cms_bp.route("/cms/edit-sites", methods=["POST"])
-def edit_sites():
+@cms_bp.route("/cms/edit", methods=["POST"])
+def edit():
     print(request.form)
     return redirect("/settings")

@@ -1,6 +1,43 @@
+background: SASUsun-1.jpg
+
 categories:
   - Sites
   - Network
   - Server
 
-background: /static/images/backgrounds/SASUsun-1.jpg
+sites:
+  - name: Google
+    url: https://www.google.com
+    description: Search engine
+    icon: google
+    category: Sites
+  - name: Facebook
+    url: https://www.facebook.com
+    description: Social network
+    icon: facebook
+    category: Sites
+  - name: Twitter
+    url: https://www.twitter.com
+    description: Social network
+    icon: twitter
+    category: Sites
+  - name: LinkedIn
+    url: https://www.linkedin.com
+    description: Professional network
+    icon: linkedin
+    category: Sites
+  - name: GitHub
+    url: https://www.github.com
+    description: Code repository
+    icon: github
+    category: Network
+  - name: GitLab
+    url: https://www.gitlab.com
+    description: Code repository
+    icon: gitlab
+    category: Network
+  - name: Bitbucket
+    url: https://www.bitbucket.com
+    description: Code repository
+    icon: bitbucket
+    category: Network

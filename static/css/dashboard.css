@@ -11,8 +11,10 @@
 body {
     display: flex;
     margin: 0;
+    /* background-image is set in HTML */
     background-repeat: no-repeat;
     background-size: cover;
+    background-attachment: fixed;
     font-family: 'Outfit', sans-serif;
     font-weight: 100;
 }
