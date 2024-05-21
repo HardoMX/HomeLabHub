@@ -9,6 +9,7 @@ class Site():
         self.category = category
 
 CATEGORIES = []
+LOCATION = ""
 BACKGROUND = ""
 SITES = []
 
@@ -16,6 +17,7 @@ with open("blueprints/data/settings.yaml", "r") as file:
     settings = yaml.safe_load(file)
     print(settings)
     CATEGORIES = settings["categories"]
+    LOCATION = settings["location"]
     BACKGROUND = f"/static/images/backgrounds/{settings["background"]}"
     
     for site in settings["sites"]:

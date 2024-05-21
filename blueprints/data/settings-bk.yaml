@@ -1,7 +1,5 @@
 background: SASUsun-1.jpg
 
-location: laxa,SE
-
 categories:
   - Sites
   - Network
@@ -48,8 +46,3 @@ sites:
     description: Hypervisor
     icon: proxmox
     category: Server
-  - name: Youtube
-    url: https://youtube.com
-    description: Video player
-    icon: youtube
-    category: Sites

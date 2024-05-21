@@ -2,22 +2,49 @@
 
 {% block content %}
     {% for category in categories %}
-    <div class="category {{ category }}">
+<div class="category {{ category }}">
         <header class="card">
             {{ category }}
         </header>
         <div class="links">
         {% for site in sites %}
         {% if site.category == category %}
-            <a class="site card link" href="{{ site.url }}" target="_blank">
+            <a class="site card link" href="{{ site.url }}" target="_blank" title="{{ site.description }}">
                 <img src="{{ site.img }}" alt="{{ site.name }}">
                 {{ site.name }}
-                {{ site.description }}
             </a>
         {% endif %}
         {% endfor %}
-        <form action="{{ url_for('cms.add_settings') }}"></form>
         </div>
     </div>
     {% endfor %}
+    <button id="modalButton" class="card link">Add site</button>
+    <div class="card modal" id="modal">
+        <div class="modal-title">
+            <h1>Add Site</h1>
+            <div class="close" id="close">X</div>
+        </div>
+        <form class="modal-form" action="{{ url_for('cms.add_site') }}" id="siteform" method="POST">
+            <label for="title">Title</label>
+            <input class="form-entry" type="text" name="title" required placeholder="Link title...">
+
+            <label for="url">URL</label>
+            <input class="form-entry" type="url" name="url" required placeholder="Link url...">
+
+            <label for="description">Description</label>
+            <input class="form-entry" type="text" name="description" required placeholder="Link description...">
+
+            <label for="icon">Icon</label>
+            <input class="form-entry" type="text" name="icon" required placeholder="Link icon...">
+
+            <label for="category">Category</label>
+            <select class="form-entry" name="category" id="category" form="siteform">
+                {% for category in categories %}
+                <option value="{{ category }}">{{ category }}</option>
+                {% endfor %}
+            </select>
+
+            <input class="submit" type="submit" value="Add">
+        </form>
+    </div>
 {% endblock %}

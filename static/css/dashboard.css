@@ -118,3 +118,53 @@ body {
         }
     }
 }
+
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 50%;
+    top: 50%;
+    width: 30ch;
+    transform: translate(-50%, -50%);
+    overflow: auto;
+    font-size: 2em;
+    
+    .modal-title {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        h1 {
+            margin: 0;
+        }
+
+        .close {
+            color: #FF0000;
+            background-color: var(--sats-bg);
+            padding: 1rem;
+            border-radius: 1rem;
+
+            &:hover, &:focus {
+                background-color: var(--stats);
+                cursor: pointer;
+            }
+        }
+    }
+
+    .modal-form {
+        display: flex;
+        flex-direction: column;
+
+        .form-entry {
+            font-size: 1.5rem;
+        }
+
+        .submit {
+            margin-top: 2rem;
+            font-size: 2rem;
+            width: fit-content;
+        }
+    }
+}
