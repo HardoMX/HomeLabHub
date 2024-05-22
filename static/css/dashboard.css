@@ -59,11 +59,10 @@ body {
 }
 
 .weather {
-    .time-of-day {
-        font-size: 2rem;
+    h1 {
+        margin: 0;
     }
 
-    
     .weather-info {
         display: flex;
         justify-content: space-between;
@@ -119,6 +118,9 @@ body {
     }
 }
 
+#modalButton:hover {
+    cursor: pointer;
+}
 
 .modal {
     display: none;

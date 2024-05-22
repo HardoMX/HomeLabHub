@@ -15,4 +15,4 @@ def dash():
     temp = mgr.weather_at_place(LOCATION).weather.temperature('celsius')['temp']
     weather_symbol = mgr.weather_at_place(LOCATION).weather.weather_icon_name
 
-    return render_template("dashboard.html", title="Dashboard", background=BACKGROUND, weather=weather, temp=temp, weather_symbol=weather_symbol, sites=SITES, categories=CATEGORIES)
+    return render_template("dashboard.html", title="Dashboard", background=BACKGROUND, weather=weather, temp=temp, weather_symbol=weather_symbol, location=LOCATION, sites=SITES, categories=CATEGORIES)

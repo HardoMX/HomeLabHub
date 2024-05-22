@@ -17,12 +17,12 @@
                 <div class="date">date</div>
             </div>
             <div class="weather card">
-                <span class="time-of-day">Good {{ time_of_day }}</span>
+                <h1>{{ weather }}</h1>
                 <div class="weather-info">
                     <img class="weather-symbol" src="/static/images/weather-icons/{{ weather_symbol }}.svg">
                     <div class="weather-status">
                         <span>{{ temp }}°C</span>
-                        {{ weather }}
+                        {{ location }}
                     </div>
                 </div>
             </div>
