@@ -1,8 +1,12 @@
 {% extends "index.html" %}
 
 {% block content %}
+<head>
+    <link href="{{ url_for('static', filename='css/dashboard.css') }}" rel="stylesheet">
+</head>
+
     {% for category in categories %}
-<div class="category {{ category }}">
+    <div class="category {{ category }}">
         <header class="card">
             {{ category }}
         </header>
@@ -25,7 +29,7 @@
             <h1>Add Site</h1>
             <div class="close" id="close">X</div>
         </div>
-        <form class="modal-form" action="{{ url_for('cms.add_site') }}" id="siteform" method="POST">
+        <form class="modal-form form" action="{{ url_for('cms.add_site') }}" id="siteform" method="POST">
             <label for="title">Title</label>
             <input class="form-entry" type="text" name="title" required placeholder="Link title...">
 

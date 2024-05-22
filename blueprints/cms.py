@@ -20,11 +20,15 @@ def settings():
     temp = mgr.weather_at_place(LOCATION).weather.temperature('celsius')['temp']
     weather_symbol = mgr.weather_at_place(LOCATION).weather.weather_icon_name
     
-    file = open('blueprints/data/settings.yaml', 'r') # TODO For some reason the file in-browser doesn't always feature the latest changes'
+    file = open('blueprints/data/settings.yaml', 'r')
     settings = file.read()
+    file.seek(0)
+    lines = len(file.readlines())
     file.close()
+
+    print(lines)
     
-    return render_template("settings.html", title="Settings", background=BACKGROUND, weather=weather, temp=temp, weather_symbol=weather_symbol, location=LOCATION, settings=settings)
+    return render_template("settings.html", title="Settings", background=BACKGROUND, weather=weather, temp=temp, weather_symbol=weather_symbol, location=LOCATION, settings=settings, lines=lines)
 
 @cms_bp.route("/cms/add/site", methods=["POST"])
 def add_site():

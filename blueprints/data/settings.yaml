@@ -48,3 +48,8 @@ sites:
     description: Speedtest
     icon: librespeed
     category: Network
+  - name: PiHole
+    url: https://pi-hole.net
+    description: Ad-blocking DNS
+    icon: pi-hole
+    category: Network

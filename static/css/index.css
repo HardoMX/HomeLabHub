@@ -1,0 +1,81 @@
+:root {
+    --menu: #696969;
+    --card: #99999935;
+    --text: #FFFFFF;
+    --stats: #00E0FF;
+    --sats-bg: #AAAAAA;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap');
+
+body {
+    display: flex;
+    margin: 0;
+    /* background-image is set in HTML */
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    font-family: 'Outfit', sans-serif;
+    font-weight: 300;
+}
+.sidebar {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    height: 100%;
+    width: fit-content;
+    margin: 1rem;
+}
+
+.content {
+    width: 100%;
+    margin: 1rem;
+    nav ul {
+        display: flex;
+        justify-content: space-between;
+        list-style-type: none;
+        padding: 0;
+        margin: 0;
+    }
+}
+
+/* TODO: change px to relative units when rest of design is more complete */
+.card {
+    padding: 1rem;
+    border-radius: 1rem;
+    color: var(--text);
+    background-color: var(--card);
+    box-shadow: 1px 1px 2px #000000, inset 1px 1px 2px #FFFFFF;
+    backdrop-filter: blur(5px);
+}
+
+.datetime {
+    display: flex;
+    flex-direction: column;
+
+    .time {
+        font-size: 4rem;
+    }
+}
+
+.weather {
+    h1 {
+        margin: 0;
+        font-weight: 300;
+    }
+
+    .weather-info {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        .weather-symbol {
+            max-width: 4rem;
+        }
+
+        .weather-status {
+            display: flex;
+            flex-direction: column;
+        }
+    }
+}
