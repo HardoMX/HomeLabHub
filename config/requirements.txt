@@ -1,0 +1,5 @@
+Flask
+pyowm
+pyyaml
+setuptools
+pytest

@@ -1,0 +1,21 @@
+{% extends "index.html" %}
+
+{% block content %}
+    <head>
+        <link href="{{ url_for('static', filename='css/settings.css') }}" rel="stylesheet">
+    </head>
+    <header>
+        <h1 class="card">Settings</h1>
+    </header>
+    <form action="{{ url_for('cms.edit') }}" method="POST" class="settings-form form card">
+        <label for="settings">Edit settings file</label>
+        <textarea name="settings" id="settings" rows="{{ lines }}" spellcheck="false">{{ settings }}</textarea>
+        <input type="submit" value="Save">
+    </form>
+    <form action="{{ url_for('cms.background') }}" method="POST" enctype="multipart/form-data" class="background-form form card">
+        <label for="background">Upload background</label>
+        <input class="" type="file" name="background" accept="image/*" required>
+        <input type="submit" value="Upload">
+    </form>
+    <a class="return card" href="/">Return to dashboard</a>
+{% endblock %}

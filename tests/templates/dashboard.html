@@ -1,0 +1,55 @@
+{% extends "index.html" %}
+
+{% block content %}
+<head>
+    <link href="{{ url_for('static', filename='css/dashboard.css') }}" rel="stylesheet">
+</head>
+
+    {% for category in categories %}
+    <div class="category {{ category }}">
+        <header class="card">
+            {{ category }}
+        </header>
+        <div class="links">
+        {% for site in sites %}
+        {% if site.category == category %}
+            <a class="site card link" href="{{ site.url }}" target="_blank" title="{{ site.description }}">
+                <img src="{{ site.img }}" alt="{{ site.name }}">
+                {{ site.name }}
+            </a>
+        {% endif %}
+        {% endfor %}
+        </div>
+    </div>
+    {% endfor %}
+    <button id="modalButton" class="card link">Add site</button>
+    <a class="card link" href="{{ url_for('cms.settings') }}">Edit settings</a>
+    <div class="card modal" id="modal">
+        <div class="modal-title">
+            <h1>Add Site</h1>
+            <div class="close" id="close">X</div>
+        </div>
+        <form class="modal-form form" action="{{ url_for('cms.add_site') }}" id="siteform" method="POST">
+            <label for="title">Title</label>
+            <input class="form-entry" type="text" name="title" required placeholder="Link title...">
+
+            <label for="url">URL</label>
+            <input class="form-entry" type="url" name="url" required placeholder="Link url...">
+
+            <label for="description">Description</label>
+            <input class="form-entry" type="text" name="description" placeholder="Link description...">
+
+            <label for="icon">Icon</label>
+            <input class="form-entry" type="text" name="icon" required placeholder="Link icon...">
+
+            <label for="category">Category</label>
+            <select class="form-entry" name="category" id="category" form="siteform">
+                {% for category in categories %}
+                <option value="{{ category }}">{{ category }}</option>
+                {% endfor %}
+            </select>
+
+            <input class="submit" type="submit" value="Add">
+        </form>
+    </div>
+{% endblock %}
