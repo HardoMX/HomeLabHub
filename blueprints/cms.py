@@ -1,9 +1,13 @@
-from flask import Blueprint ,render_template, redirect, request, url_for
+from flask import Blueprint ,render_template, redirect, request, url_for, flash
+from werkzeug.utils import secure_filename
+import os
 
 from pyowm import OWM
 from blueprints.data.api import OWM_API_KEY
 
 from blueprints.data.settings import BACKGROUND, LOCATION
+ALLOWED_EXTENSIONS = {'jpg', 'jpeg', 'png'}
+UPLOAD_FOLDER = './static/images/backgrounds'
 
 cms_bp = Blueprint("cms", __name__)
 
@@ -52,5 +56,30 @@ def edit():
 
     with open('blueprints/data/settings.yaml', 'w') as file:
         file.write(text)
+
+    return redirect(url_for("cms.settings"))
+
+def allowed_file(filename):
+    return '.' in filename and \
+            filename.rsplit('.', 1)[1].lower() in ALLOWED_EXTENSIONS
+
+@cms_bp.route("/cms/background", methods=["POST"])
+def background():
+    print(request.files)
+
+    if 'file' in request.files:
+        flash('No file part')
+        return redirect(request.url)
+
+    file = request.files['background']
+
+    if file.filename == '':
+        flash('No selected file')
+        return redirect(request.url)
+
+    if file and allowed_file(file.filename):
+        filename = secure_filename(file.filename)
+        file.save(os.path.join(UPLOAD_FOLDER, filename))
+        return redirect(url_for("cms.settings"))
 
     return redirect(url_for("cms.settings"))

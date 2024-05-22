@@ -10,4 +10,9 @@
         <textarea name="settings" id="settings">{{ settings }}</textarea>
         <input type="submit" value="Save">
     </form>
+    <form action="{{ url_for('cms.background') }}" method="POST" enctype="multipart/form-data" class="background-form form card">
+        <label for="background">Upload background</label>
+        <input class="" type="file" name="background" accept="image/*">
+        <input type="submit" value="Upload">
+    </form>
 {% endblock %}
