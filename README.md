@@ -64,6 +64,8 @@ I am mainly inspired by [Dashy](https://github.com/lissy93/dashy) and [CasaOS](h
 - Per-user site-lists
 - Host server stats
 - Integration with other services
+- Syntax highlighting in the YAML editor
+See the [roadmap](https://github.com/users/HardoMX/projects/7/views/2) on GitHub
 
 ## License
 This project is licensed under a GPL V3.0 license. See more at [LICENSE](LICENSE)
