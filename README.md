@@ -69,6 +69,6 @@ I am mainly inspired by [Dashy](https://github.com/lissy93/dashy) and [CasaOS](h
 This project is licensed under a GPL V3.0 license. See more at [LICENSE](LICENSE)
 
 ## Contact
-Project link: https://github.com/hardomx/homelabhub
-My website: https://site.hardo.dev
+Project link: https://github.com/hardomx/homelabhub <br>
+My website: https://site.hardo.dev <br>
 If you want a feature or change, create an [issue](https://github.com/HardoMX/HomeLabHub/issues) on GitHub
