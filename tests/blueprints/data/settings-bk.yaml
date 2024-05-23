@@ -1,4 +1,6 @@
-background: SASUsun-1.jpg
+background: default.png
+
+location: laxa,SE
 
 categories:
   - Sites
@@ -11,38 +13,43 @@ sites:
     description: Search engine
     icon: google
     category: Sites
-  - name: Facebook
-    url: https://www.facebook.com
-    description: Social network
-    icon: facebook
-    category: Sites
-  - name: Twitter
-    url: https://www.twitter.com
-    description: Social network
-    icon: twitter
-    category: Sites
-  - name: LinkedIn
-    url: https://www.linkedin.com
-    description: Professional network
-    icon: linkedin
-    category: Sites
   - name: GitHub
     url: https://www.github.com
     description: Code repository
     icon: github
-    category: Network
+    category: Sites
   - name: GitLab
     url: https://www.gitlab.com
     description: Code repository
     icon: gitlab
-    category: Network
-  - name: Bitbucket
-    url: https://www.bitbucket.com
-    description: Code repository
-    icon: bitbucket
-    category: Network
+    category: Sites
   - name: Proxmox
     url: https://proxmox.com
     description: Hypervisor
     icon: proxmox
     category: Server
+  - name: Portainer
+    url: https://portainer.com
+    description: Docker manager
+    icon: portainer
+    category: Server
+  - name: Youtube
+    url: https://youtube.com
+    description: Video player
+    icon: youtube
+    category: Sites
+  - name: OPNSense
+    url: https://opnsense.org
+    description: Router OS
+    icon: opnsense
+    category: Network
+  - name: Librespeed
+    url: https://librespeed.org
+    description: Speedtest
+    icon: librespeed
+    category: Network
+  - name: PiHole
+    url: https://pi-hole.net
+    description: Ad-blocking DNS
+    icon: pi-hole
+    category: Network
