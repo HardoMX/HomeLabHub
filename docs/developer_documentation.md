@@ -231,7 +231,7 @@ app.py
 Just follow PEP8 and you're fine :)
 
 ## Testing
-Run the program and see if something breaks. This isn't a large project (yet)
+There are some simple tests in `HomeLabHub/tests` you can run with the `pytest` command. These tests test if the main page is accessible, that the post works, and that you get redirected correctly.
 
 ## Accessibility
 Follow standard HTML recommendations, if you find something that's not up to code, fix it and make a pull request.
