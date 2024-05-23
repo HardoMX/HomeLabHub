@@ -30,6 +30,7 @@ clone the github repo with `git clone https://github.com/hardomx/homelabhub`
 
 ## 2. User Manual
 ### Accessing the application
+Before starting the application you need to configure it, see [configuring](#configuring)
 After starting the application you can access it through a browser.
 By default the website is reached at `<server-ip>:300`, if you run it on the same computer as you're using, it will be at `127.0.0.1:3000`
 
@@ -56,6 +57,14 @@ Much of the UI can be configured, see [configuring](#configuring)
 - Return to dashboard
 
 ### Configuring
+#### Weather
+To get weather information you need to:
+1. Sign up to [openweathermap](https://openweathermap.org/)
+2. Create an API key
+3. Create the file `api.py` under the `bluebrints/data/` directory
+4. Add your key to the `api.py` file like this: `OWM_API_KEY = "<your API key>"`
+
+#### YAML
 All configuration is done through the `settings.yaml` file. To find how to write yaml, see [Ansible's syntax guide](https://docs.ansible.com/ansible/latest/reference_appendices/YAMLSyntax.html).
 When adding sites to the file, order doesn't matter, the yaml site renders them in the correct category anyways. 
 
@@ -64,7 +73,7 @@ You can change the settings in three ways:
 2. Edit the file from the settings page. Here you can change background image, location, categories, and sites. This file is not validated in any way, if you do something wrong things *WILL* break, luckily, most things except weather and links should still work, so you can fix it.
 3. The third way is to edit the yaml file directly, this is essentially the same as option 2, but you need physical or remote access to the server. 
 
-#### YAML options
+##### YAML options
 - `background:` set the filename of the background image. Images need to be in `static/images/backgrounds`, images uploaded through the site are always stored correctly.
 - `location:` set the location for weather information, e.g `stockholm,SE` or `london,GB`
 - `gategories:` a list of all the categories you want, every category needs to start with `- `
